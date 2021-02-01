@@ -1,0 +1,25 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #ccc;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#table-wrapper {
+  padding: 30px 15px;
+  text-align: center;
+}
+
+#table-wrapper td:first-child {
+  text-align: left;
+}
