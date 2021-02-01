@@ -7,6 +7,30 @@ export function createTableHead(sortTable) {
   tableOrder.forEach(column => {
     const th = document.createElement("th");
     th.textContent = column;
+    th.addEventListener("click", e => {
+      let direction = "";
+      let thToSort = e.target;
+
+      if (thToSort.classList.contains("asc")) {
+        thToSort.classList.remove("asc");
+        thToSort.classList.add("desc");
+        direction = "desc";
+      } else if (thToSort.classList.contains("desc")) {
+        thToSort.removeAttribute("class");
+        direction = "reset";
+      } else {
+        for (const th of thToSort.parentNode.children) {
+          if (thToSort === th) {
+            thToSort.classList.add("asc");
+            direction = "asc";
+          } else {
+            th.removeAttribute("class");
+          }
+        }
+      }
+
+      sortTable(column, direction);
+    });
     tr.appendChild(th);
   });
 
