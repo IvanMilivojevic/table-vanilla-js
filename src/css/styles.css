@@ -20,6 +20,38 @@ a {
   text-align: center;
 }
 
+#table-wrapper table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#table-wrapper th {
+  background-size: auto 16px;
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  padding: 7px 10px;
+  cursor: pointer;
+  border: 1px solid #000;
+  background-color: #aaa;
+}
+
+#table-wrapper th.asc {
+  background-image: url(../images/arrow-down-black.png);
+  background-color: #888;
+}
+
+#table-wrapper th.desc {
+  background-image: url(../images/arrow-up-black.png);
+  background-color: #888;
+}
+
+#table-wrapper td {
+  padding: 5px 10px;
+  background-color: #ddd;
+  border: 1px solid #777;
+}
+
 #table-wrapper td:first-child {
   text-align: left;
 }
