@@ -1,6 +1,8 @@
+import { sortTable } from "../modifiers/modifiers.js";
+
 const tableOrder = ["fullName", "balance", "isActive", "registered", "state", "country"];
 
-export function createTableHead(sortTable) {
+export function createTableHead(tableData) {
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
 
@@ -29,7 +31,7 @@ export function createTableHead(sortTable) {
         }
       }
 
-      sortTable(column, direction);
+      sortTable(tableData, column, direction);
     });
     tr.appendChild(th);
   });
